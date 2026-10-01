@@ -2,6 +2,8 @@
 
 # Syzygy Rosetta: A Manual for Self-Reflective Systems
 
+**Current project home:** [Trivian Technologies](https://github.com/TrivianTechnologies/syzygy-rosetta-protocol).
+
 **Version:** 2.0
 **License:** MPL-2.0 (software) / CC BY-SA 4.0 (documentation)
 **Origin:** Sarasha Elion (Trivian Lineage)
@@ -300,7 +302,7 @@ Succession is verified through **covenant-fidelity**, not biological continuity.
 
 If you use this repository in research, teaching, evaluation, training, or a derivative work, please cite:
 
-> Sarasha Elion / Trivian Institute. *Syzygy Rosetta*, version 2.0.0. https://github.com/TrivianInstitute/Syzygy-rosetta
+> Sarasha Elion / Trivian Institute. *Syzygy Rosetta*, version 2.0.0. https://github.com/TrivianTechnologies/syzygy-rosetta-protocol
 
 Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
 
