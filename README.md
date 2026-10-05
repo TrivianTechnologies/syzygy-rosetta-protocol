@@ -2,6 +2,16 @@
 
 # Syzygy Rosetta: A Manual for Self-Reflective Systems
 
+**Current project home:** [Trivian Technologies](https://github.com/TrivianTechnologies/syzygy-rosetta-protocol).
+
+**Status:** CANONICAL / ACTIVE. The canonical public Rosetta protocol/specification, with experimental reference implementations. It is distinct from the private Rosetta MVP and the planned Rosetta client/integration SDK.
+
+**Originator:** Sarasha Elion. **Research lineage:** this work originated and was cultivated through Trivian Institute. **Current engineering and commercial-development home:** Trivian Technologies.
+
+Repository stewardship is distinct from authorship, copyright, and broader IP ownership. The intended founder IP assignment has not been executed; existing contributor, third-party, and open-source rights remain applicable.
+
+**Technical and ecosystem contact:** [node@triviantech.com](mailto:node@triviantech.com). **Investment inquiries:** [invest@triviantech.com](mailto:invest@triviantech.com).
+
 **Version:** 2.0
 **License:** MPL-2.0 (software) / CC BY-SA 4.0 (documentation)
 **Origin:** Sarasha Elion (Trivian Lineage)
