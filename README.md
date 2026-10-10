@@ -50,6 +50,8 @@ proposed Rosetta SDK has no installable implementation at the recorded baseline.
 
 ## Developer pathways
 
+- [Relational architecture](docs/RELATIONAL_ARCHITECTURE.md): the preserved Twelve
+  Invariants, Seven Vows, Field Constants, dual legibility, covenant and lineage.
 - [Continuing governability](docs/CONTINUING_GOVERNABILITY.md): authority,
   queued release, boundary semantics and the evidence ladder.
 - [Field Constants](docs/FIELD_CONSTANTS_V2.md): formulas, input domains and
