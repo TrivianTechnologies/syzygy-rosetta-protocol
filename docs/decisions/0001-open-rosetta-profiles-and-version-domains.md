@@ -1,8 +1,8 @@
 # DR-0001: Open Rosetta profiles and version domains
 
-Status: **PROPOSED — founder review required**. Architecture direction approved
-with conditions; this documentation does not approve implementation or a release.
-Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.1](../OPEN_ROSETTA_CONTRACT.md).
+Status: **PROPOSED integration contract**. The protocol reference implementation
+is unchanged; these SDK integration requirements are not yet implemented or ratified.
+Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.2](../OPEN_ROSETTA_CONTRACT.md).
 
 ## Context and decision
 
@@ -22,17 +22,15 @@ create a competing authority registry or silently select the most permissive
 backend. A first local implementation need not add an HTTP service. SDK
 distribution/import naming, API shape and wire transport remain review choices.
 The public SDK scaffold's HTTP examples are plans, not an adopted wire contract.
-Private `syzygy-rosetta-v1` and Faiyaz's proprietary financial-compliance Rosetta
-are excluded: no inspection, dependency or implementation reuse.
 
 ## Independent version domains
 
 | Domain | Meaning and baseline | Proposed change rule |
 |---|---|---|
-| Protocol | Public normative semantics; existing reference metadata is 2.1.0, with historical README/citation 2.0 labels retained | Semantic changes require separate protocol review; package or contract versions cannot silently redefine it |
+| Protocol | Public normative semantics; existing reference metadata is 2.1.0, with earlier 2.0 labels preserved in history and citation metadata | Semantic changes require separate protocol review; package or contract versions cannot silently redefine it |
 | Package | Independently distributed artifacts: current protocol package `syzygy-rosetta` 2.1.0; public `tria-sdk` 0.1.0a7; new Rosetta SDK package version unset | Releases belong to their own distributions; no release advanced here |
 | Schema | Each serialized format's identity and version; no new Rosetta wire schema adopted | Unknown/incompatible schema is non-authorizing; no guessing, aliasing or automatic migration |
-| Contract | This proposed interoperability/evidence agreement: `open-rosetta-contract/0.1.0-draft.1` | Explicit reviewed revision, independent of runtime releases; draft identifier confers no support |
+| Contract | This proposed interoperability/evidence agreement: `open-rosetta-contract/0.1.0-draft.2` | Explicit reviewed revision, independent of runtime releases; draft identifier confers no support |
 | Compatibility | Explicit mapping of exact protocol/package/schema/profile/backend versions and exercised guarantees | No supported integration tuple yet; candidate baseline is not a compatibility declaration |
 
 The [JSON manifest](../open-rosetta-contract.manifest.json) is a machine-readable
@@ -53,7 +51,7 @@ public commits and scoped tests. Separate green suites do not validate future
 Rosetta/TRIA composition. Required unresolved gates include TRIA correction
 graph validation, next-context contestation propagation and mutation-wide
 authority/atomicity. F033 remains UNRESOLVED and outside initial guarantees;
-this PR designs no distributed-freshness mechanism.
+no distributed-freshness mechanism is specified here.
 
 Review must resolve licensing, supported interpreter/dependency ranges, naming
 and wire transport before any corresponding implementation/release claim.
@@ -62,22 +60,21 @@ establish a supported integration matrix.
 
 ## Provenance and rights
 
-Preserve Sarasha Elion's authorship, Trivian Institute research lineage, and
-Trivian Technologies' current engineering home. Stewardship is not ownership
-assignment. Contributor and third-party rights and notices remain applicable.
-Current protocol software is MPL-2.0; documentation is CC BY-SA 4.0 where
-applicable, with file-specific notices controlling. Earlier grants remain
-valid; historical evidence and citations are retained. See the existing
-[license record](../../LICENSE_METADATA.md), [software license](../../LICENSE)
-and [documentation notice](../../LICENSE-DOCUMENTATION.md).
+Attribute Sarasha Elion and preserve Trivian Institute research lineage,
+Trivian Technologies engineering attribution, contributor credit and third-party
+notices. The controlling [software license](../../LICENSE) is MPL-2.0;
+[documentation](../../LICENSE-DOCUMENTATION.md) is CC BY-SA 4.0 where applicable,
+subject to file-specific notices. Preserve earlier grants and historical
+attribution as described in the [license record](../../LICENSE_METADATA.md).
 
-The public Rosetta SDK and Sandbox trees inspected at the recorded commits
-have no repository license files. That absence is unresolved, not permission
-to assume this repository's licenses apply there. No license selection,
-relicensing, trademark grant or founder IP assignment is authorized by PR 1.
+The recorded Rosetta SDK and Sandbox trees have no repository license files.
+Before distributing or reusing their material, establish applicable grants and
+retain required notices; do not infer that this repository's licenses apply to
+those trees. Their licensing remains an unresolved release requirement.
 
-## Consequences
+## Release scope
 
-PR 1 changes only documentation and navigation. Runtime source, tests, frozen
-witnesses, version pins, licenses and workflows remain unchanged. Later work
-requires separate authorization under the [six-PR plan](../OPEN_ROSETTA_CONTRACT.md#six-pr-plan).
+The proposed contract changes documentation only. Runtime source, tests, frozen
+witnesses, version pins, license files and workflows remain unchanged. A release
+claim requires the explicit compatibility evidence described in the
+[release criteria](../OPEN_ROSETTA_CONTRACT.md#release).

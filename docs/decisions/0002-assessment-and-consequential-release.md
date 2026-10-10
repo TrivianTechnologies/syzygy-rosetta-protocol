@@ -1,7 +1,18 @@
 # DR-0002: Assessment precedence and consequential release
 
-Status: **PROPOSED — founder review required**. No runtime change.
-Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.1](../OPEN_ROSETTA_CONTRACT.md).
+Status: **PROPOSED integration contract**. No runtime change or ratification.
+Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.2](../OPEN_ROSETTA_CONTRACT.md).
+
+## Demonstrated reference behavior
+
+The current reference implementation accepts host-owned behavioral checks,
+returns SURVIVES when all supplied results are valid and true, and FAILS for a
+false result when evaluation completes with boolean results. Missing required
+checks, exceptions and nonboolean results produce UNRESOLVED. Existing tests
+exercise these separate paths. Mixed false/unknown evidence has the discrepancy
+below; the proposed aggregation and complete-diagnostic rules are not current
+capabilities. Assessments describe checks at evaluation time and do not authorize
+external actions.
 
 ## Assessment decision
 
@@ -42,7 +53,7 @@ says any false check yields FAILS. Pinned [reference code](https://github.com/Tr
 can return UNRESOLVED for missing, exceptional or nonboolean evidence before
 aggregating a false result; early return can also omit later diagnostics.
 This decision resolves the intended meaning **only at the proposed contract
-level**, pending founder review. Existing behavior, tests and historical
+level**. It is not implemented or ratified. Existing behavior, tests and historical
 evidence are unchanged; passing reference tests does not implement this rule.
 
 ## Release and effect decision

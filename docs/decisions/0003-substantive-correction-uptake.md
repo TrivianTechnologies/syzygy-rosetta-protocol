@@ -1,8 +1,8 @@
 # DR-0003: Evidence for substantive correction uptake
 
-Status: **PROPOSED — founder review required**. Fixtures below are specifications,
+Status: **PROPOSED integration contract**. Fixtures below are specifications,
 not newly implemented tests or claims of current capability.
-Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.1](../OPEN_ROSETTA_CONTRACT.md).
+Date: 2026-10-10. Contract: [open-rosetta-contract/0.1.0-draft.2](../OPEN_ROSETTA_CONTRACT.md).
 
 ## Decision and evidence obligations
 
@@ -59,7 +59,7 @@ The audited public TRIA baseline includes correction assessment and governed
 application surfaces, but green tests do not establish this proposed integration.
 Specifically, **correction graph validation**, **next-context contestation
 propagation**, and **mutation-wide authority/atomicity** remain UNRESOLVED gates.
-Later authorized work must establish graph integrity and dependency semantics,
+Integration evidence must establish graph integrity and dependency semantics,
 observable propagation into the next actual context, and authorization/atomicity
 across the relevant mutation path before claiming compatibility. This decision
 does not prescribe a fix, change witnesses, or certify those capabilities.

@@ -1,14 +1,19 @@
 # Open Rosetta: proposed profiles and versioned contract
 
-Contract ID: **open-rosetta-contract/0.1.0-draft.1**.
-Status: **PROPOSED — founder review required**. Date: 2026-10-10.
+Contract ID: **open-rosetta-contract/0.1.0-draft.2**.
+Status: **PROPOSED integration contract; not implemented or ratified**.
+Date: 2026-10-10.
 
-This is PR 1, Decision Records and Versioned Contract Manifest. The architecture
-direction is approved with conditions; every status rule and contract detail
-here remains a draft documentation decision. No release version advances and
-no runtime behavior changes. The [manifest](open-rosetta-contract.manifest.json)
-describes this proposal for readers/tools; it is not runtime configuration or
-an adopted wire schema.
+The public protocol defines scoped authority, behavioral assessment and
+inclusive correction boundaries. Its reference implementation demonstrates
+bounded local behavior through the existing test suite. This document proposes
+how a separately distributed Rosetta SDK would compose those semantics with
+public TRIA. The protocol and its reference behavior retain their own evidence status.
+
+The [manifest](open-rosetta-contract.manifest.json) is a machine-readable
+**documentation artifact**, not runtime configuration or an adopted wire schema.
+Only this documentation contract revision changes; release versions and runtime
+behavior remain unchanged.
 
 ## Decisions and profiles
 
@@ -27,10 +32,20 @@ completion receipt and observed external effects. Hosts retain responsibility
 for real effects and evidence. Local guarantees do not imply remote atomicity
 or cancellation. A first implementation may be local; HTTP is not required.
 
-## Version domains and coverage
+## Conformance
+
+**Current reference evidence:** scoped authority lifecycle and queued current
+resolution are exercised by the reference suite; the declared correction window
+is inclusive. Complete boolean behavioral checks have explicit pass/fail
+results; missing/invalid/unavailable evidence yields uncertainty. The
+[assessment discrepancy](decisions/0002-assessment-and-consequential-release.md#documentationreference-code-discrepancy)
+limits claims about mixed evidence and complete diagnostics.
+
+**Proposed integration requirements:** the following coverage and aggregation
+rules specify the future SDK contract, not current implementation behavior.
 
 Protocol, package, schema, contract and compatibility versions are independent
-as defined in DR-0001. Profile/check-set version `0.1.0-draft.1` is proposed
+as defined in DR-0001. Profile/check-set version `0.1.0-draft.2` is proposed
 documentation only. Neither profile nor schema may be silently inferred or
 upgraded. No supported integration tuple or new runtime schema is declared.
 
@@ -48,7 +63,7 @@ insufficient without current permission and all other gates.
 DR-0002 records the current prose/code discrepancy. This is a proposed contract
 resolution, not a runtime fix or a capability established by passing tests.
 
-## Boundaries and correction evidence
+## Security
 
 The last-correctable boundary is inclusive. Deny late first release; distinguish
 it from correction after an already-crossed effect boundary, which cannot imply
@@ -56,13 +71,14 @@ cancellation. Missing/ambiguous effect evidence stays unknown. Corrections need
 attributable pre/post state, claim/dependency/correction identities, provenance,
 authorized acceptance/application, next-consumption behavior and relevant
 consequence traces. Content alignment alone does not prove causation. See all
-eleven proposed fixtures in DR-0003; none are implemented by this PR.
+eleven proposed fixtures in DR-0003; these remain integration requirements, not
+capabilities established by the existing reference suite.
 
 ## Tested baseline
 
 These are separately observed public heads, not a validated integrated stack.
-Links pin the audited source; this PR's documentation commit is recorded in PR
-validation evidence separately, avoiding a self-referential manifest hash.
+Links pin the audited source. Documentation-head test runs and CI are recorded
+separately in the change's execution records; they are not new integration evidence.
 
 | Public repository / immutable source | SHA | Evidence scope |
 |---|---|---|
@@ -77,46 +93,41 @@ generation, not a test pass or empirical governance evidence. Current results
 are separate from historical saved artifacts. Protocol CI lists Python 3.10
 and 3.12; TRIA CI lists 3.11 and 3.12. Python 3.10/3.11 were unavailable locally;
 3.13 was an additional metadata-permitted check, not proof of a supported
-integration range. No private MVP or proprietary financial-compliance code was
-inspected or reused.
+integration range.
 
-## Open gates and choices
+## Compatibility
 
 | ID | Review item / limitation |
 |---|---|
 | G01 | Correction graph validation — UNRESOLVED compatibility gate |
 | G02 | Next-context contestation propagation — UNRESOLVED compatibility gate |
 | G03 | Mutation-wide authority/atomicity — UNRESOLVED compatibility gate |
-| F033 | Cross-store freshness/global no-resurrection — UNRESOLVED, outside initial guarantees; no distributed solution in this PR |
-| O01 | License files absent in SDK/Sandbox; no license choice or rights assignment here |
+| F033 | Cross-store freshness/global no-resurrection — UNRESOLVED, outside initial guarantees; no distributed solution specified here |
+| O01 | License files absent in SDK/Sandbox; establish applicable grants and notices before distribution/reuse |
 | O02 | Supported interpreter/dependency ranges and exact compatible backend tuple require review; baseline pins are not adopted integration pins |
 | O03 | Distribution/import names, profile naming and public API shape require review |
 | O04 | Wire schema/transport and any HTTP service require review; local-first implementation is permitted as a future design choice |
 
-## Six-PR plan
+## Release
 
-| PR | Scope | Authorization |
-|---|---|---|
-| 1 | Decision Records and Versioned Contract Manifest | PR 1 documentation and draft review only |
-| 2 | Public types and non-authorizing reference profile | NOT AUTHORIZED — new approval required |
-| 3 | TRIA adapter and guarded execution profile | NOT AUTHORIZED — new approval required |
-| 4 | Correction contract and bounded uptake work | NOT AUTHORIZED — new approval required |
-| 5 | Local mock conformance Sandbox and migration documentation | NOT AUTHORIZED — new approval required |
-| 6 | Packaging and release-candidate evidence | NOT AUTHORIZED — new approval required |
+No SDK integration release or supported compatibility tuple is established.
+A release candidate needs explicit protocol/package/schema/contract/profile/
+backend versions; demonstrated conformance, including the proposed coverage and
+uptake controls; resolved compatibility gates for its claimed capabilities; an
+exercised interpreter/dependency matrix; and documented licensing and transport
+choices. A first local implementation need not add an HTTP service.
 
-This is the current agreed sequence. Architecture approval does not authorize
-PRs 2–6. Each requires new approval; license changes, merge, publication and
-deployment also require separate approval. Listing follow-on work does not
-implement it or satisfy its unresolved compatibility gates.
+The candidate must retain raw execution records, failures and limitations
+separately from historical evidence. Passing the current reference suite is
+positive evidence for its encoded local behavior, not proof of the proposed
+mixed-evidence rule, integrated correction propagation or external effects.
+F033 remains outside the initial guarantee envelope.
 
-## Provenance and review boundary
+## Licensing and attribution
 
-Preserve Sarasha Elion / Trivian Institute provenance, contributor and third-party
-rights, historical grants and notices, and current engineering stewardship by
-Trivian Technologies. Current protocol software MPL-2.0 and documentation
-CC BY-SA 4.0 notices apply as described in DR-0001; no new license or ownership
-assignment is made. Missing SDK/Sandbox licenses remain unresolved.
-
-PR 1 must remain documentation-only. No source, assertions, frozen witnesses,
-runtime schemas, package versions, dependency pins, workflows or license files
-change. PRs 2–6, merge, publication and deployment require further authorization.
+Current protocol [software](../LICENSE) is MPL-2.0; its
+[documentation](../LICENSE-DOCUMENTATION.md) is CC BY-SA 4.0 where applicable.
+Follow controlling file-specific notices, preserve contributor attribution and
+historical grants, and credit Sarasha Elion / Trivian Institute and current
+engineering home Trivian Technologies. See [DR-0001](decisions/0001-open-rosetta-profiles-and-version-domains.md)
+for the SDK/Sandbox licensing requirement. No license files change here.
