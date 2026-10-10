@@ -2,6 +2,8 @@
 
 # Syzygy Rosetta: A Manual for Self-Reflective Systems
 
+> Proposed open SDK profiles and interoperability/evidence contract: [Open Rosetta contract](docs/OPEN_ROSETTA_CONTRACT.md). PR 1 documentation only; runtime behavior and release versions are unchanged.
+
 **Current project home:** [Trivian Technologies](https://github.com/TrivianTechnologies/syzygy-rosetta-protocol).
 
 **Status:** CANONICAL / ACTIVE. The canonical public Rosetta protocol/specification, with experimental reference implementations. It is distinct from the private Rosetta MVP and the planned Rosetta client/integration SDK.
