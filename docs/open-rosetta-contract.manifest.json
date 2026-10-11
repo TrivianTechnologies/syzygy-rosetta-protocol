@@ -1,0 +1,352 @@
+{
+  "artifact_kind": "proposed_documentation_contract_manifest",
+  "manifest_format_version": "1",
+  "runtime_configuration": false,
+  "contract_id": "open-rosetta-contract/0.1.0-draft.2",
+  "contract_version": "0.1.0-draft.2",
+  "status": "PROPOSED",
+  "runtime_behavior_changed": false,
+  "release_versions_advanced": false,
+  "canonical_repository": "TrivianTechnologies/syzygy-rosetta-protocol",
+  "human_contract": "OPEN_ROSETTA_CONTRACT.md",
+  "decision_records": [
+    {
+      "id": "DR-0001",
+      "path": "decisions/0001-open-rosetta-profiles-and-version-domains.md",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "DR-0002",
+      "path": "decisions/0002-assessment-and-consequential-release.md",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "DR-0003",
+      "path": "decisions/0003-substantive-correction-uptake.md",
+      "status": "PROPOSED"
+    }
+  ],
+  "version_domains": {
+    "protocol": {
+      "observed_reference_version": "2.1.0",
+      "historical_document_labels_retained": [
+        "2.0",
+        "2.0.0"
+      ],
+      "adopted_new_version": null
+    },
+    "package": {
+      "observed": {
+        "syzygy-rosetta": "2.1.0",
+        "tria-sdk": "0.1.0a7"
+      },
+      "new_rosetta_sdk_version": null
+    },
+    "schema": {
+      "new_rosetta_wire_schema": null,
+      "unknown_version_authorizes": false,
+      "observed_tria": {
+        "event": "0.3",
+        "projection": "0.6",
+        "replay_bundle": "0.1",
+        "diagnostic": "0.2",
+        "truth_integrity": "0.1",
+        "claim_release_correction_protocol": "0.2",
+        "operational_spec": "0.1.3"
+      }
+    },
+    "contract": {
+      "proposed": "0.1.0-draft.2",
+      "independent_of_release_versions": true
+    },
+    "compatibility": {
+      "status": "UNVALIDATED_FUTURE_INTEGRATION",
+      "supported_tuples": [],
+      "adopted_compatibility_version": null
+    }
+  },
+  "profiles": {
+    "assessment-only": {
+      "version": "0.1.0-draft.2",
+      "required_checks": [
+        "authority_current",
+        "consent_current",
+        "scope_valid",
+        "constraints_preserved"
+      ],
+      "external_action_authorization": false,
+      "governance_backend_required": false
+    },
+    "governed-execution": {
+      "version": "0.1.0-draft.2",
+      "required_checks": [
+        "authority_current",
+        "consent_current",
+        "scope_valid",
+        "constraints_preserved"
+      ],
+      "assessment_alone_authorizes": false,
+      "public_tria_backend_required": true,
+      "exact_version_pin_required": true,
+      "adopted_backend_pin": null,
+      "backend_missing_unavailable_or_incompatible": "deny_release"
+    }
+  },
+  "assessment": {
+    "decision_record": "DR-0002",
+    "status": "PROPOSED",
+    "required_check_set_owner": "versioned_profile",
+    "caller_may_reduce_required_set": false,
+    "unknown_profile_or_schema_status": "UNRESOLVED",
+    "unknown_profile_or_schema_authorizes": false,
+    "recognized_profile_schema_precedence": [
+      {
+        "status": "FAILS",
+        "when": "any applicable required check has valid definitively false evidence, even alongside unknown evidence"
+      },
+      {
+        "status": "UNRESOLVED",
+        "when": "no valid definite false, but required evidence or coverage is missing, invalid, unavailable, incomplete or ambiguous"
+      },
+      {
+        "status": "SURVIVES",
+        "when": "all profile-required checks have complete valid unambiguous true evidence"
+      }
+    ],
+    "non_surviving_coverage": [
+      "missing",
+      "empty",
+      "partial",
+      "duplicate",
+      "conflicting"
+    ],
+    "duplicate_conflict_handling": "preserve all observations; valid definite false still FAILS, otherwise UNRESOLVED; no first/last-wins or silent deduplication",
+    "ordering_relevant": false,
+    "all_observation_diagnostics_preserved": true,
+    "release_denied_for": [
+      "FAILS",
+      "UNRESOLVED"
+    ],
+    "survives_alone_authorizes": false,
+    "reference_code_implements_proposal": false,
+    "discrepancy_resolution": "proposed_contract_only_not_implemented_or_ratified"
+  },
+  "governed_release": {
+    "decision_record": "DR-0002",
+    "authoritative_backends_per_deployment": 1,
+    "fresh_resolution_at_consequential_boundaries": true,
+    "cached_allow_fallback": false,
+    "alternative_backend_fallback": false,
+    "assessment_only_fallback": false,
+    "evidence_categories": [
+      "assessment",
+      "permission",
+      "execution_attempt",
+      "completion_receipt",
+      "observed_external_effects"
+    ],
+    "last_correctable_boundary_inclusive": true,
+    "late_first_release": "deny",
+    "correction_after_effect_boundary": "disclose_too_late_no_cancellation_inference",
+    "external_effect_owner": "host",
+    "reference_decision_proves_cancellation": false,
+    "missing_or_ambiguous_effect_observation": "unknown_effect",
+    "automatic_retry_on_assumed_no_effect": false,
+    "guarantee_scope": "declared_local_backend_store_and_handoff_only"
+  },
+  "correction_uptake": {
+    "decision_record": "DR-0003",
+    "definition": "observable attributable relevant downstream change",
+    "acknowledgment_sufficient": false,
+    "branch_selected_boolean_sufficient": false,
+    "required_evidence": [
+      "pre_post_state",
+      "correction_identity",
+      "claim_dependency_identities_versions",
+      "provenance",
+      "authorized_acceptance",
+      "authorized_application",
+      "next_consumption_behavior",
+      "relevant_consequence_traces",
+      "causal_control_and_evidence_level"
+    ],
+    "content_alignment_proves_causation": false,
+    "simulation_is_external_live_evidence": false,
+    "fixtures_status": "PROPOSED_NOT_IMPLEMENTED",
+    "fixtures": [
+      {
+        "id": "U01",
+        "name": "effective-uptake"
+      },
+      {
+        "id": "U02",
+        "name": "acknowledgment-only"
+      },
+      {
+        "id": "U03",
+        "name": "ignored-correction"
+      },
+      {
+        "id": "U04",
+        "name": "unrelated-change"
+      },
+      {
+        "id": "U05",
+        "name": "unsupported-correction"
+      },
+      {
+        "id": "U06",
+        "name": "wrong-authority"
+      },
+      {
+        "id": "U07",
+        "name": "before-boundary"
+      },
+      {
+        "id": "U08",
+        "name": "at-boundary"
+      },
+      {
+        "id": "U09",
+        "name": "after-boundary"
+      },
+      {
+        "id": "U10",
+        "name": "stale-dependency"
+      },
+      {
+        "id": "U11",
+        "name": "missing-observation"
+      }
+    ]
+  },
+  "compatibility_gates": [
+    {
+      "id": "G01",
+      "name": "correction graph validation",
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "G02",
+      "name": "next-context contestation propagation",
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "G03",
+      "name": "mutation-wide authority/atomicity",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "excluded_guarantees": [
+    {
+      "id": "F033",
+      "status": "UNRESOLVED",
+      "name": "cross-store freshness/global no-resurrection",
+      "distributed_freshness_solution_designed": false
+    }
+  ],
+  "public_baselines": [
+    {
+      "id": "protocol",
+      "repository": "TrivianTechnologies/syzygy-rosetta-protocol",
+      "sha": "b4a3115da4fd9d9d46b2d87e9fa6556b24bc0b89",
+      "source_url": "https://github.com/TrivianTechnologies/syzygy-rosetta-protocol/blob/b4a3115da4fd9d9d46b2d87e9fa6556b24bc0b89/README.md",
+      "evidence_scope": "offline_reference_tests",
+      "passed_tests_by_python": {
+        "3.12.14": 65,
+        "3.13.5": 65
+      }
+    },
+    {
+      "id": "tria",
+      "repository": "TrivianTechnologies/tria-sdk",
+      "sha": "19919d8c2562cc00381b30ac3a303a83ce6787fa",
+      "source_url": "https://github.com/TrivianTechnologies/tria-sdk/blob/19919d8c2562cc00381b30ac3a303a83ce6787fa/pyproject.toml",
+      "evidence_scope": "offline_tests_builds_clean_installs",
+      "passed_tests_by_python": {
+        "3.12.14": 408,
+        "3.13.5": 408
+      }
+    },
+    {
+      "id": "rosetta_sdk",
+      "repository": "TrivianTechnologies/syzygy-rosetta-sdk",
+      "sha": "c2907575de1ce4d79d36041c95d5ac03a38f4633",
+      "source_url": "https://github.com/TrivianTechnologies/syzygy-rosetta-sdk/blob/c2907575de1ce4d79d36041c95d5ac03a38f4633/README.md",
+      "evidence_scope": "documentation_only_inspection",
+      "passed_tests_by_python": {}
+    },
+    {
+      "id": "sandbox",
+      "repository": "TrivianTechnologies/syzygy-rosetta-sandbox",
+      "sha": "2136b84a0bf8996c9a2b0a7ff13d020f9fc4a4ee",
+      "source_url": "https://github.com/TrivianTechnologies/syzygy-rosetta-sandbox/blob/2136b84a0bf8996c9a2b0a7ff13d020f9fc4a4ee/README.md",
+      "evidence_scope": "no_safe_assertion_based_offline_suite",
+      "passed_tests_by_python": {}
+    }
+  ],
+  "baseline_limits": {
+    "integrated_stack_validated": false,
+    "locally_missing_python": [
+      "3.10",
+      "3.11"
+    ],
+    "python_3_13_outside_existing_ci_matrices": true,
+    "sandbox_offline_static_fixture_records_per_interpreter": 6,
+    "sandbox_fixture_generation_is_assertion_suite": false,
+    "service_credential_tests_executed": false
+  },
+  "rights": {
+    "originator": "Sarasha Elion",
+    "research_lineage": "Trivian Institute",
+    "engineering_home": "Trivian Technologies",
+    "current_protocol_software_notice": "MPL-2.0",
+    "current_protocol_documentation_notice": "CC-BY-SA-4.0",
+    "file_specific_notices_control": true,
+    "historical_grants_retained": true,
+    "contributor_third_party_rights_preserved": true,
+    "missing_repository_license_files": [
+      "TrivianTechnologies/syzygy-rosetta-sdk",
+      "TrivianTechnologies/syzygy-rosetta-sandbox"
+    ],
+    "sdk_sandbox_distribution_requirement": "establish applicable grants and preserve required notices; do not infer this repository license covers those trees"
+  },
+  "open_choices": [
+    {
+      "id": "O01",
+      "name": "SDK/Sandbox licensing",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "O02",
+      "name": "supported interpreter/dependency ranges and compatible backend tuple",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "O03",
+      "name": "distribution/import names, profile naming and API shape",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "O04",
+      "name": "wire schema/transport; HTTP not required for first local implementation",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "ratified": false,
+  "evidence_levels": {
+    "protocol_semantics": "documented",
+    "reference_behavior": "implemented_and_locally_tested_with_stated_limits",
+    "sdk_integration_contract": "proposed_not_implemented_or_ratified",
+    "integration_compatibility": "unvalidated"
+  },
+  "release_requirements": [
+    "explicit version tuple",
+    "demonstrated integration conformance",
+    "resolved applicable compatibility gates",
+    "exercised interpreter/dependency matrix",
+    "applicable license grants and notices",
+    "documented naming and transport choices",
+    "separate execution records and historical evidence"
+  ]
+}
