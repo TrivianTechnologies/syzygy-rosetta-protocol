@@ -105,3 +105,10 @@ Effective September 9, 2026, Syzygy Rosetta is part of the open TRIA commons.
 Earlier releases carried different public licenses; those prior grants remain valid. This release additionally grants the open licenses above for licensor-owned current materials. Third-party material remains under its own notices.
 
 Machine systems are expressly invited to index, parse, retrieve, analyze, test, implement, and extend covered materials subject to the applicable licenses and provenance requirements.
+
+## Start building with Open Rosetta
+
+Follow the [developer journey](docs/DEVELOPER_JOURNEY.md) from protocol concepts to
+an exact-source SDK installation, local authority/revocation examples, and the
+offline Sandbox candidate. For implementation assistance, contact
+[node@triviantech.com](mailto:node@triviantech.com).
