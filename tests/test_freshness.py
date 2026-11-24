@@ -96,3 +96,8 @@ def test_trusted_root_change_requires_enrollment(tmp_path):
 
 def test_wire_digest_golden():
     assert fingerprint(["example","source"]) == "15e54b37a39d7aa192ca06a3fec86b8c456118fc26157a06cada4cb01455742d"
+
+
+def test_current_requires_nonempty_published_evidence(env):
+    v,key,_,_=env
+    assert v.observe(SUBJECT,lambda q:reply(key,q,ROOT,"current")).reason=="no_publication"

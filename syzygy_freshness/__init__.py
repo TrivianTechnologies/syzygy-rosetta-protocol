@@ -102,9 +102,15 @@ class Observation:
     cursor: Cursor | None
 
 
+def _elapsed_time():
+    if not hasattr(time, "CLOCK_BOOTTIME"):
+        raise OSError("configure a trusted suspend-aware elapsed clock on this platform")
+    return time.clock_gettime(time.CLOCK_BOOTTIME)
+
+
 class Verifier:
     """One pinned authority/scope per private verifier DB. Reopen without enroll."""
-    def __init__(self, path, domain, public_key, anchor, *, enroll=False, clock=time.monotonic):
+    def __init__(self, path, domain, public_key, anchor, *, enroll=False, clock=_elapsed_time):
         self.domain, self.key, self.clock = domain, public_key, clock
         self.uri = Path(path).resolve().as_uri()
         self.cache = None
@@ -168,6 +174,8 @@ class Verifier:
                         or (cursor.publication == floor.publication and cursor.publication_hash != floor.publication_hash)):
                     db.execute("UPDATE verifier SET held=1 WHERE id=1")
                     return self._result("unverified", "history_conflict", subject)
+                if status in ("current", "stale") and cursor.publication == 0:
+                    return self._result("unverified", "no_publication", subject)
                 db.execute("UPDATE verifier SET floor=? WHERE id=1", (json.dumps(cursor.wire()),))
             outcome = self._result({"current":"current_at_check","stale":"stale",
                                     "unpublished":"unverified"}[status], status, subject, cursor)
